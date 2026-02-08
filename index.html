@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hulu Gift Card Giveaway</title>
+
+  <!-- Page Title & Meta -->
+  <title>Streaming Rewards – Hulu Gift Card Entry</title>
+  <meta name="description" content="Enter for a chance to win a $100 Hulu Gift Card. Free entry for eligible US Android users. No purchase necessary.">
+
+  <!-- Netlify & Cache Control -->
+  <meta name="netlify" content="false">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
   <style>
     body {
@@ -18,6 +27,12 @@
       margin: 0 auto;
       padding: 20px;
       text-align: center;
+    }
+
+    .brand {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 12px;
     }
 
     .hero-image {
@@ -35,21 +50,27 @@
     .subheadline {
       font-size: 15px;
       color: #555;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       line-height: 1.4;
+    }
+
+    .step {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 12px;
     }
 
     .cta-button {
       display: block;
       width: 100%;
       padding: 16px;
-      background-color: #1ce783; /* Hulu-inspired green */
+      background-color: #1ce783;
       color: #000;
       text-decoration: none;
       font-size: 18px;
       font-weight: 600;
       border-radius: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .cta-button:hover {
@@ -101,7 +122,6 @@
       h1 {
         font-size: 22px;
       }
-
       .cta-button {
         font-size: 16px;
       }
@@ -112,6 +132,9 @@
 <body>
 
   <div class="container">
+
+    <!-- BRAND -->
+    <div class="brand">LootsHub Rewards</div>
 
     <!-- HERO IMAGE -->
     <img 
@@ -129,8 +152,11 @@
       Free entry. No purchase necessary.
     </div>
 
+    <!-- STEP INDICATOR -->
+    <div class="step">Step 1 of 2: Check eligibility</div>
+
     <!-- CTA -->
-    <a href="YOUR_CPA_LINK_HERE" class="cta-button">
+    <a href="https://singingfiles.com/show.php?l=0&u=2488462&id=71508" class="cta-button">
       Enter the Giveaway
     </a>
 
@@ -148,12 +174,29 @@
 
     <!-- FOOTER -->
     <footer>
+      © 2026 LootsHub Rewards. All rights reserved.<br>
       No purchase necessary.<br>
-      <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a><br><br>
+      <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a><br>
+      Contact: support@lootshub25.site<br><br>
       This promotion is not sponsored, endorsed, or administered by Hulu.
     </footer>
 
   </div>
+
+  <!-- ANDROID-ONLY FILTER -->
+  <script>
+    (function () {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      if (!/android/i.test(ua)) {
+        document.body.innerHTML = `
+          <div style="text-align:center;padding:40px;font-family:Arial;">
+            <h2>This promotion is available for Android users only</h2>
+            <p>Please visit from an Android device to continue.</p>
+          </div>
+        `;
+      }
+    })();
+  </script>
 
 </body>
 </html>
