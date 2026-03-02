@@ -1,202 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Page Title & Meta -->
-  <title>Streaming Rewards – Hulu Gift Card Entry</title>
-  <meta name="description" content="Enter for a chance to win a $100 Hulu Gift Card. Free entry for eligible US Android users. No purchase necessary.">
-
-  <!-- Netlify & Cache Control -->
-  <meta name="netlify" content="false">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Opera GX Review: The Gamer Browser Test</title>
+  <meta name="description" content="A fast, practical look at Opera GX features and why gamers like it." />
 
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
+    :root{
+      --bg:#0b1220;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --text:#eaf0ff;
+      --muted:rgba(234,240,255,.74);
+      --border:rgba(255,255,255,.14);
+      --accent:#ff1b2d;   /* Opera GX vibe */
+      --accent2:#7c5cff;
+      --good:#22c55e;
+      --shadow: 0 16px 60px rgba(0,0,0,.40);
+      --radius:18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 420px at 12% 0%, rgba(255,27,45,.22), transparent 60%),
+        radial-gradient(820px 450px at 92% 10%, rgba(124,92,255,.22), transparent 60%),
+        radial-gradient(900px 520px at 40% 100%, rgba(34,197,94,.14), transparent 55%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 90px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background: linear-gradient(135deg, var(--accent), #ff4d4d);
+      box-shadow: 0 16px 40px rgba(255,27,45,.22);
+    }
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      padding:8px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    @media (max-width:700px){ .tag{white-space:normal} }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .hero{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-120px auto auto -120px;
+      width:280px; height:280px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,27,45,.35), transparent 65%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(26px, 3.6vw, 44px);
+      line-height:1.08;
+      letter-spacing:-.4px;
+    }
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:15px;
+      max-width: 62ch;
+    }
+    .quick{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin: 12px 0 0;
+    }
+    .pill{
+      display:flex; align-items:center; gap:8px;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.86);
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      border:1px solid rgba(34,197,94,.35);
+      background: rgba(34,197,94,.16);
+      display:inline-flex; align-items:center; justify-content:center;
+      color:#b7f7c8;
+      font-size:12px;
     }
 
-    .container {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
+    .ctaCard{
+      border:1px solid rgba(255,27,45,.25);
+      background: rgba(255,27,45,.08);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .ctaTitle{margin:0 0 8px; font-size:18px}
+    .ctaText{margin:0 0 12px; color:var(--muted); font-size:13px}
+    .btn{
+      display:block;
+      text-align:center;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      padding:14px 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), #ff4d4d);
+      color: #0b1220;
+      box-shadow: 0 18px 44px rgba(255,27,45,.22);
+      transition: transform .08s ease, filter .15s ease;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{transform: translateY(1px)}
+    .micro{
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(234,240,255,.72);
     }
 
-    .brand {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 12px;
+    .section{
+      margin-top:16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .section p{margin:0 0 10px; color:var(--muted)}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+    @media (max-width:520px){ .cards{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:14px;
+    }
+    .card b{display:block; margin-bottom:6px}
+    .card span{color:var(--muted); font-size:13px}
+
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top:10px;
+      overflow:hidden;
+      border-radius:14px;
+    }
+    th, td{
+      text-align:left;
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      font-size:13px;
+      color: rgba(234,240,255,.9);
+    }
+    th{color: rgba(234,240,255,.75); font-weight:800; background: rgba(255,255,255,.04)}
+    td.muted{color: var(--muted)}
+    .good{color: rgba(183,247,200,.95)}
+    .note{
+      font-size:12px;
+      color: var(--muted);
+      margin-top:10px;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:10px;
     }
 
-    .hero-image {
-      width: 100%;
+    /* Sticky bottom CTA (mobile-friendly) */
+    .sticky{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding:10px 12px;
+      background: rgba(11,18,32,.82);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+    .stickyInner{
+      max-width: var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .stickyText{
+      font-size:12px;
+      color: rgba(234,240,255,.78);
+    }
+    .stickyBtn{
+      flex: 0 0 auto;
+      padding:12px 12px;
       border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .subheadline {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 20px;
-      line-height: 1.4;
-    }
-
-    .step {
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 12px;
-    }
-
-    .cta-button {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      background-color: #1ce783;
-      color: #000;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .cta-button:hover {
-      background-color: #17c46f;
-    }
-
-    .micro-copy {
-      font-size: 12px;
-      color: #777;
-      margin-bottom: 25px;
-    }
-
-    .trust-list {
-      text-align: left;
-      margin: 0 auto 30px;
-      padding: 0;
-      list-style: none;
-      max-width: 280px;
-    }
-
-    .trust-list li {
-      font-size: 14px;
-      margin-bottom: 10px;
-      padding-left: 22px;
-      position: relative;
-    }
-
-    .trust-list li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #1ce783;
-      font-weight: bold;
-    }
-
-    footer {
-      font-size: 11px;
-      color: #999;
-      line-height: 1.5;
-    }
-
-    footer a {
-      color: #999;
-      text-decoration: underline;
-      margin: 0 5px;
-    }
-
-    @media (max-width: 360px) {
-      h1 {
-        font-size: 22px;
-      }
-      .cta-button {
-        font-size: 16px;
-      }
+      background: linear-gradient(135deg, var(--accent), #ff4d4d);
+      color:#0b1220;
+      text-decoration:none;
+      font-weight:900;
+      white-space:nowrap;
     }
   </style>
 </head>
 
 <body>
-
-  <div class="container">
-
-    <!-- BRAND -->
-    <div class="brand">LootsHub Rewards</div>
-
-    <!-- HERO IMAGE -->
-    <img 
-      src="https://via.placeholder.com/800x500.png?text=Streaming+on+Mobile" 
-      alt="Streaming on mobile device" 
-      class="hero-image"
-    >
-
-    <!-- HEADLINE -->
-    <h1>Enter for a chance to win a $100 Hulu Gift Card</h1>
-
-    <!-- SUBHEADLINE -->
-    <div class="subheadline">
-      Available for US Android users.<br>
-      Free entry. No purchase necessary.
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div>GX Review</div>
+          <div style="font-size:12px;color:var(--muted)">Independent write-up</div>
+        </div>
+      </div>
+      <div class="tag">Quick test: “Is your browser stealing FPS?”</div>
     </div>
 
-    <!-- STEP INDICATOR -->
-    <div class="step">Step 1 of 2: Check eligibility</div>
+    <div class="grid">
+      <!-- LEFT -->
+      <section class="hero">
+        <h1>Most “lag” isn’t your PC — it’s background apps (including your browser).</h1>
+        <p class="sub">
+          If you game with tabs open (YouTube, Discord, guides), your browser can chew RAM/CPU in the background.
+          <b>Opera GX</b> is built for gamers and lets you cap browser resource usage.
+        </p>
 
-    <!-- CTA -->
-    <a href="https://singingfiles.com/show.php?l=0&u=2488462&id=71508" class="cta-button">
-      Enter the Giveaway
-    </a>
+        <div class="quick">
+          <div class="pill"><span class="tick">✓</span>RAM & CPU limiter</div>
+          <div class="pill"><span class="tick">✓</span>Twitch/Discord tools</div>
+          <div class="pill"><span class="tick">✓</span>Free to try</div>
+          <div class="pill"><span class="tick">✓</span>Custom themes</div>
+        </div>
 
-    <!-- MICRO COPY -->
-    <div class="micro-copy">
-      By continuing, you’ll be redirected to our secure entry form.
+        <div class="section" style="margin-top:16px">
+          <h2>Fast 30-second “browser test”</h2>
+          <p>Answer honestly:</p>
+          <div class="cards">
+            <div class="card"><b>Do you keep 10+ tabs open while gaming?</b><span>If yes, you’re a perfect fit for GX.</span></div>
+            <div class="card"><b>Do you use Discord/Twitch?</b><span>GX has gaming integrations that reduce switching.</span></div>
+            <div class="card"><b>Do you notice stutters when alt-tabbing?</b><span>Resource caps can help keep performance steadier.</span></div>
+            <div class="card"><b>Do you watch guides while playing?</b><span>GX is designed for “gaming + browsing” together.</span></div>
+          </div>
+
+          <div style="margin-top:14px">
+            <a class="btn" href="YOUR_CPA_LINK_HERE" rel="nofollow noopener">Try Opera GX (Free)</a>
+            <div class="micro">Tip: Always review details on the next page before you submit any info.</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>What makes Opera GX different?</h2>
+          <div class="cards">
+            <div class="card">
+              <b>GX Control (the big one)</b>
+              <span>Set limits on RAM/CPU so your browser doesn’t compete with your game.</span>
+            </div>
+            <div class="card">
+              <b>Cleaner gaming workflow</b>
+              <span>Quick access to Discord/Twitch + sidebar tools to reduce tab chaos.</span>
+            </div>
+            <div class="card">
+              <b>Personalization</b>
+              <span>Gaming themes, sounds, and a layout built for long sessions.</span>
+            </div>
+            <div class="card">
+              <b>Built-in extras</b>
+              <span>Optional features like a free VPN (availability varies by region).</span>
+            </div>
+          </div>
+
+          <div class="note">
+            Note: Performance results vary by device, number of tabs, and what’s running in the background.
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Quick comparison</h2>
+          <p class="muted">A simple way to think about it:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Opera GX</th>
+                <th>Typical browser</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RAM / CPU limiter</td>
+                <td class="good">Yes</td>
+                <td class="muted">Usually no</td>
+              </tr>
+              <tr>
+                <td>Gaming integrations</td>
+                <td class="good">Yes</td>
+                <td class="muted">Limited</td>
+              </tr>
+              <tr>
+                <td>Customization</td>
+                <td class="good">High</td>
+                <td class="muted">Medium</td>
+              </tr>
+              <tr>
+                <td>Free to use</td>
+                <td class="good">Yes</td>
+                <td class="good">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top:14px">
+            <a class="btn" href="YOUR_CPA_LINK_HERE" rel="nofollow noopener">Continue to Opera GX</a>
+            <div class="micro">Independent review • We may earn compensation from partners.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="ctaCard">
+        <h3 class="ctaTitle">Recommendation</h3>
+        <p class="ctaText">
+          If you game + browse at the same time, Opera GX is worth testing.
+          It’s built to reduce the “browser steals resources” problem.
+        </p>
+        <a class="btn" href="YOUR_CPA_LINK_HERE" rel="nofollow noopener">Try Opera GX Now</a>
+        <div class="micro">
+          Disclosure: This is an independent page. We may receive compensation from partners.
+          Always read the next page details carefully.
+        </div>
+
+        <div class="section" style="margin-top:14px">
+          <h2 style="margin:0 0 8px">FAQ</h2>
+          <p><b>Is it free?</b><br><span style="color:var(--muted);font-size:13px">Opera GX is free to use. (Any partner flow details appear on the next page.)</span></p>
+          <p><b>Will it magically boost FPS?</b><br><span style="color:var(--muted);font-size:13px">No promises — but limiting browser usage can help keep performance steadier.</span></p>
+          <p><b>Who is it best for?</b><br><span style="color:var(--muted);font-size:13px">People who game while watching streams, using Discord, or reading guides.</span></p>
+        </div>
+      </aside>
     </div>
 
-    <!-- TRUST BULLETS -->
-    <ul class="trust-list">
-      <li>Free to enter</li>
-      <li>US residents 18+</li>
-      <li>Takes less than 1 minute</li>
-    </ul>
-
-    <!-- FOOTER -->
-    <footer>
-      © 2026 LootsHub Rewards. All rights reserved.<br>
-      No purchase necessary.<br>
-      <a href="/terms.html">Terms of Use</a> | <a href="/privacy.html">Privacy Policy</a><br>
-      Contact: support@lootshub25.site<br><br>
-      This promotion is not sponsored, endorsed, or administered by Hulu.
-    </footer>
-
+    <div class="section" style="margin-top:16px">
+      <h2>Transparency</h2>
+      <p style="margin:0;color:var(--muted)">
+        This page is an independent review and may be compensated by partners.
+        It is not an official Opera page. Always verify product details and requirements on the next page.
+      </p>
+      <div class="note">
+        Add your links: <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> •
+        <a href="/terms" target="_blank" rel="noopener">Terms</a> •
+        <a href="/contact" target="_blank" rel="noopener">Contact</a>
+      </div>
+    </div>
   </div>
 
-  <!-- ANDROID-ONLY FILTER -->
+  <!-- Sticky bottom CTA -->
+  <div class="sticky" role="region" aria-label="Sticky call to action">
+    <div class="stickyInner">
+      <div class="stickyText"><b>Quick test:</b> If you game with tabs open, GX is worth trying.</div>
+      <a class="stickyBtn" href="YOUR_CPA_LINK_HERE" rel="nofollow noopener">Try GX</a>
+    </div>
+  </div>
+
   <script>
+    // Optional: forward tracking params to your CPA link automatically
+    // Put your CPA link in the anchor hrefs as normal, then this will append query params if missing.
     (function () {
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      if (!/android/i.test(ua)) {
-        document.body.innerHTML = `
-          <div style="text-align:center;padding:40px;font-family:Arial;">
-            <h2>This promotion is available for Android users only</h2>
-            <p>Please visit from an Android device to continue.</p>
-          </div>
-        `;
-      }
+      const params = new URLSearchParams(window.location.search);
+      const links = document.querySelectorAll('a[href="YOUR_CPA_LINK_HERE"]');
+      if (!links.length) return;
+
+      // If you want to pass subid/clickid, append them here:
+      // Example: ?subid={subid}&clickid={clickid} etc.
+      // This code forwards ALL existing params to the CPA URL.
+      links.forEach(a => {
+        try {
+          const url = new URL(a.getAttribute("href"), window.location.origin);
+          params.forEach((v, k) => {
+            if (!url.searchParams.has(k)) url.searchParams.set(k, v);
+          });
+          a.setAttribute("href", url.toString());
+        } catch (e) {}
+      });
     })();
   </script>
-
 </body>
-</html>
+              </html>
